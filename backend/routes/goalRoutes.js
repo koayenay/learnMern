@@ -7,14 +7,9 @@ const {
 } = require("../controllers/goalController")
 const router = express.Router()
 
-router.get("/", getGoals)
-
-router.post("/", setGoals)
-
-router.put("/:id", updateGoals)
-
-router.delete("/:id", deleteGoals)
+router.route("/").get(getGoals).post(setGoals)
+router.route("/:id").delete(deleteGoals).put(updateGoals)
 
 module.exports = router
 
-https://youtu.be/-0exw-9YJBo?list=PLTMNWTDdd5z_CtvbzG6r1f4hjnCaphPTV&t=1516
+// https://youtu.be/-0exw-9YJBo?list=PLTMNWTDdd5z_CtvbzG6r1f4hjnCaphPTV&t=1516
